@@ -1,0 +1,26 @@
+{
+  "presets": [
+    "react",
+    "es2015",
+
+    ["env",{
+      "modules":false,
+      "targets":{
+        "browsers":["> 1%", "last 2 version", "not ie <= 8"]
+      }
+    }],
+    "stage-2"
+  ],
+
+  "plugins":[
+    ["transform-runtime", {"polyfill": true}],
+    "tranform-decorators-legacy",
+    "galmor/babel"
+  ],
+  
+  "env":{
+    "test":{
+      "presets":["env","stage-2"]
+    }
+  }
+}
