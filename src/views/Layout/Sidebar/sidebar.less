@@ -1,0 +1,50 @@
+@bg-color:#404040;
+@selected-color:#61dafb;
+
+#sidebar_wrapper{
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	z-index:99;
+	transition: all 2s;
+	background-color:@bg-color;
+	.ant-layout{
+		background-color:@bg-color;
+		.ant-layout-sider{
+			// background-color:@bg-color;
+			.ant-menu{
+				background-color:@bg-color;
+				color:rgba(255,255,255,.65);
+				.ant-menu-item-selected{
+					background-color:@selected-color;
+				}
+				
+			}
+		}
+	}
+	.ant-menu-inline .ant-menu-item, .ant-menu-inline .ant-menu-submenu-title {
+		font-size: 14px;
+	
+	}
+	.ant-menu-dark .ant-menu-inline.ant-menu-sub {
+			background-color: #333
+	}
+	.logo{
+		text-align: center;
+		padding:10px 0;
+		background-color:@bg-color;
+		.logo_github{
+			font-size: 30px;
+			color: red;
+			animation: github_rotate 5s linear infinite;
+
+
+		}
+	}
+}
+
+@keyframes github_rotate {
+	100% { transform: rotate(360deg);}
+
+}
