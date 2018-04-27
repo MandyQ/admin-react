@@ -1,11 +1,14 @@
 import React from 'react';
 import IconSvg from '../../../components/Icon-svg';
 
+import {Link, withRouter} from 'react-router-dom';
+
+
 import './sidebar.less';
 
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+import { Layout, Menu, Icon } from 'antd';
+const { SubMenu, Item } = Menu;
+const { Content, Sider } = Layout;
 
 
 
@@ -14,27 +17,51 @@ class Sidebar extends React.Component{
 		return(
 			<div id="sidebar_wrapper">
 			<Layout>
-				<Sider width={200} style={{ background: '#fff' }}>
+				<Sider>
 					<div className="logo">
 						<a target="_blank" style={{display:'inline-block'}} href="https://github.com/MandyQ" alt="Github MandyQ">
-							<IconSvg iconName="github" className="logo_github"/>
-							
+							<IconSvg iconName="github" className="logo_github"/>							
 						</a>
 					</div>
 					<Menu
 						mode="inline"
+						theme="dark"
 						defaultSelectedKeys={['1']}
-						defaultOpenKeys={['sub1']}
-						style={{ height: '100%', borderRight: 0 }}
+						defaultOpenKeys={['sub1']}						
 					>
-						<SubMenu key="sub1" title={<span><Icon type="user" />subnav 1</span>}>
-							<Menu.Item key="1">option1</Menu.Item>
-							<Menu.Item key="2">option2</Menu.Item>
-							<Menu.Item key="3">option3</Menu.Item>
-							<Menu.Item key="4">option4</Menu.Item>
+						<Menu.Item key="1">
+							<Icon type="user" />
+							<span>首页</span>
+						</Menu.Item>
+						<Menu.Item key="2">
+							<Icon type="lock" />
+							<span>权限管理</span>
+						</Menu.Item>         
+						<SubMenu key="sub1" title={<span><Icon type="calendar" /><span>react知识点</span></span>}>
+							<Menu.Item key="3">常用语法</Menu.Item>
+							<Menu.Item key="4">生命周期</Menu.Item>
+							<Menu.Item key="5">组件写法</Menu.Item>
+							<Menu.Item key="6">双向绑定</Menu.Item>
+							<Menu.Item key="7">Redux</Menu.Item>
+							<Menu.Item key="8">按需加载</Menu.Item>
+							<Menu.Item key="9">网络请求</Menu.Item>						
 						</SubMenu>
-						
-					
+						<SubMenu key="sub2" title={<span><Icon type="appstore" /><span>组件</span></span>}>
+							<Menu.Item key="10">Github</Menu.Item>
+							<Menu.Item key="11">svg图标</Menu.Item>          
+						</SubMenu>
+						<SubMenu key="sub3" title={<span><Icon type="appstore" /><span>组件</span></span>}>
+							<Menu.Item key="9">Github</Menu.Item>
+							<Menu.Item key="10">svg图标</Menu.Item>          
+						</SubMenu>
+						<SubMenu key="sub4" title={<span><Icon type="appstore" /><span>组件</span></span>}>
+							<Menu.Item key="9">Github</Menu.Item>
+							<Menu.Item key="10">svg图标</Menu.Item>          
+						</SubMenu>
+						<SubMenu key="sub5" title={<span><Icon type="appstore" /><span>组件</span></span>}>
+							<Menu.Item key="9">Github</Menu.Item>
+							<Menu.Item key="10">svg图标</Menu.Item>          
+						</SubMenu>
 					</Menu>
 				</Sider>				
 			</Layout>
