@@ -27,3 +27,7 @@ text-decoration: none;
 }
 .gutter-col {
 	padding: 10px; */
+
+	.fr {
+		float:right;
+	}
